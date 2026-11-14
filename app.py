@@ -84,6 +84,7 @@ def index():
                         sorted_arr = line.split(":")[1]
                     elif line.startswith("STEPS:"):
                         parsing_steps = True
+                        steps = line.partition(":")[2].strip().replace("], [", "],\n[")
                         continue
                     
                     if parsing_steps:
